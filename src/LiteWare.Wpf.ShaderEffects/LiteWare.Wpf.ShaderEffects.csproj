@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Hisham Maudarbocus</Authors>
+    <PackageTags>liteware wpf shader effect</PackageTags>
+    <PackageProjectUrl>https://github.com/samsam07/LiteWare.Wpf.ShaderEffect</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>Copyright (c) 2020 Hisham Maudarbocus</Copyright>
+    <PackageReleaseNotes>Initial release of LiteWare.Wpf.ShaderEffects
+
+- New shader effect - MotionBlur
+- New shader effect - Negative
+- New shader effect - ZoomBlur</PackageReleaseNotes>
+    <Description>Custom WPF shader effects library.</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="LiteWare.Wpf.ShaderEffects.csproj.DotSettings" />
+  </ItemGroup>
+
+  <Import Project="ShaderCompiler.target" />
+
+</Project>

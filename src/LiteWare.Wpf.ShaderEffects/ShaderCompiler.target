@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ShaderDir>$(ProjectDir)</ShaderDir>
+    <Fxc>$(SolutionDir)tools\fxc.exe</Fxc>
+    <FxcArgs>/O0 /T ps_2_0 /nologo /Fo</FxcArgs>
+  </PropertyGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Message Importance="High" Text="Compiling shader effect files..." />
+    <ItemGroup>
+      <_ShaderFiles Include="$(ShaderDir)**\*.fx" />
+    </ItemGroup>
+    <Exec Command="&quot;$(Fxc)&quot; $(FxcArgs) &quot;$([System.IO.Path]::ChangeExtension('%(_ShaderFiles.Identity)', '.ps'))&quot; &quot;%(_ShaderFiles.Identity)&quot;" />
+    <ItemGroup>
+      <Resource Include="$(ShaderDir)**\*.ps" />
+    </ItemGroup>
+  </Target>
+</Project>
