@@ -11,4 +11,4 @@ The library is available as a [Nuget Package](https://www.nuget.org/packages/Lit
 Building the project should automatically trigger the compilation of the shader effect files.
 The behaviour is defined in the `ShaderCompiler.target` file.
 
-The shader effect compiler `tools/fxc.exe` is used to comile the shader effect `.fx` files.
+The shader effect compiler `tools/fxc.exe` is used to compile the shader effect `.fx` files.
